@@ -1,6 +1,7 @@
 
 #import <Foundation/Foundation.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import "CartyCustomExtras.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
