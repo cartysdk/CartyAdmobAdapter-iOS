@@ -13,7 +13,7 @@ let package = Package(
             targets: ["CartyAdmobAdapter"]
         ),
     ],
-    dependencies: [
+    dependencies:[
         .package(url: "https://github.com/cartysdk/Carty-swift-package-manager.git", from: "0.6.0")
     ],
     targets: [
