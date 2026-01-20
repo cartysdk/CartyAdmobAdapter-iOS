@@ -52,6 +52,10 @@
         CartyCustomExtras *extras = adConfiguration.extras;
         self.nativeAd.isMute = extras.isMute;
     }
+    else
+    {
+        self.nativeAd.isMute = GADMobileAds.sharedInstance.applicationMuted;
+    }
     [self.nativeAd loadAd];
 }
 

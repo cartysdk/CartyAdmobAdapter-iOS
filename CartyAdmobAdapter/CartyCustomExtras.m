@@ -11,4 +11,19 @@
     }
     return self;
 }
+
+- (void)setDoNotSell:(BOOL)doNotSell
+{
+    _doNotSell = doNotSell;
+    [[CartyADSDK sharedInstance] setDoNotSell:doNotSell];
+}
+
+- (void)setUserID:(NSString *)userID
+{
+    if(userID)
+    {
+        _userID = userID;
+        [CartyADSDK sharedInstance].userid = userID;
+    }
+}
 @end

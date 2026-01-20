@@ -7,11 +7,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CartyCustomExtras : NSObject<GADAdNetworkExtras>
 
-@property (nonatomic, copy)NSDictionary *additionalParameters;
+@property (nonatomic,copy)NSString *userID;
 @property (nonatomic,copy)NSString *customRewardString;
 //isMute default YES
 @property (nonatomic,assign)BOOL isMute;
 @property (nonatomic,assign)CTBannerSizeType bannerSize;
+@property (nonatomic,assign)BOOL doNotSell;
 @end
 
 NS_ASSUME_NONNULL_END

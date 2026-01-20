@@ -46,11 +46,15 @@
     self.interstitialAd = [[CTInterstitialAd alloc] init];
     self.interstitialAd.placementid = pid;
     self.interstitialAd.delegate = self;
-    self.interstitialAd.isMute = GADMobileAds.sharedInstance.applicationMuted;
+    NSLog(@"adConfiguration.extras %@",adConfiguration.extras);
     if([adConfiguration.extras isKindOfClass:[CartyCustomExtras class]])
     {
         CartyCustomExtras *extras = adConfiguration.extras;
         self.interstitialAd.isMute = extras.isMute;
+    }
+    else
+    {
+        self.interstitialAd.isMute = GADMobileAds.sharedInstance.applicationMuted;
     }
     [self.interstitialAd loadAd];
 }

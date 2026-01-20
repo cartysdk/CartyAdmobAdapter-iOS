@@ -49,8 +49,6 @@
     self.banner.placementid = pid;
     self.banner.rootViewController = adConfiguration.topViewController;
     self.banner.delegate = self;
-    self.banner.isMute = GADMobileAds.sharedInstance.applicationMuted;
-    self.banner.isMute = GADMobileAds.sharedInstance.applicationMuted;
     if([adConfiguration.extras isKindOfClass:[CartyCustomExtras class]])
     {
         CartyCustomExtras *extras = adConfiguration.extras;
@@ -66,6 +64,10 @@
             rect.size = adConfiguration.adSize.size;
             self.banner.frame = rect;
         }
+    }
+    else
+    {
+        self.banner.isMute = GADMobileAds.sharedInstance.applicationMuted;
     }
     [self.banner loadAd];
 }

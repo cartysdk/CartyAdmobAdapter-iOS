@@ -54,6 +54,10 @@
         self.rewardedVideoAd.customRewardString = extras.customRewardString;
         self.rewardedVideoAd.isMute = extras.isMute;
     }
+    else
+    {
+        self.rewardedVideoAd.isMute = GADMobileAds.sharedInstance.applicationMuted;
+    }
     [self.rewardedVideoAd loadAd];
 }
 

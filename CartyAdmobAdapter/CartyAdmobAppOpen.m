@@ -47,11 +47,14 @@
     self.opanAd = [[CTAppOpenAd alloc] init];
     self.opanAd.placementid = pid;
     self.opanAd.delegate = self;
-    self.opanAd.isMute = GADMobileAds.sharedInstance.applicationMuted;
     if([adConfiguration.extras isKindOfClass:[CartyCustomExtras class]])
     {
         CartyCustomExtras *extras = adConfiguration.extras;
         self.opanAd.isMute = extras.isMute;
+    }
+    else
+    {
+        self.opanAd.isMute = GADMobileAds.sharedInstance.applicationMuted;
     }
     [self.opanAd loadAd];
 }
