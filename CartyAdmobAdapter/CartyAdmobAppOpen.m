@@ -19,7 +19,8 @@
       [completionHandler copy];
 
     _loadCompletionHandler = ^id<GADMediationAppOpenAdEventDelegate>(
-    _Nullable id<GADMediationAppOpenAd> ad, NSError *_Nullable error) {
+      _Nullable id<GADMediationAppOpenAd> ad, NSError *_Nullable error) {
+          
     if (atomic_flag_test_and_set(&completionHandlerCalled)) {
       return nil;
     }
@@ -28,7 +29,7 @@
     if (originalCompletionHandler) {
       delegate = originalCompletionHandler(ad, error);
     }
-
+          
     originalCompletionHandler = nil;
 
     return delegate;

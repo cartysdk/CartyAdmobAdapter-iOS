@@ -20,18 +20,15 @@
 
     _loadCompletionHandler = ^id<GADMediationInterstitialAdEventDelegate>(
       _Nullable id<GADMediationInterstitialAd> ad, NSError *_Nullable error){
-        // Only allow completion handler to be called once.
         if (atomic_flag_test_and_set(&completionHandlerCalled)) {
           return nil;
         }
 
         id<GADMediationInterstitialAdEventDelegate> delegate = nil;
         if (originalCompletionHandler) {
-          // Call original handler and hold on to its return value.
           delegate = originalCompletionHandler(ad, error);
         }
 
-        // Release reference to handler. Objects retained by the handler will also be released.
         originalCompletionHandler = nil;
 
         return delegate;

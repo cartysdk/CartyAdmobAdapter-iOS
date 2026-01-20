@@ -93,6 +93,18 @@
         completionHandler(error);
         return;
     }
+    NSNumber *tagForChildDirectedTreatment =
+          GADMobileAds.sharedInstance.requestConfiguration.tagForChildDirectedTreatment;
+    NSNumber *tagForUnderAgeOfConsent =
+          GADMobileAds.sharedInstance.requestConfiguration.tagForUnderAgeOfConsent;
+    if ([tagForChildDirectedTreatment isEqual:@YES] || [tagForUnderAgeOfConsent isEqual:@YES])
+    {
+        [[CartyADSDK sharedInstance] setCOPPAStatus:YES];
+    }
+    else if ([tagForChildDirectedTreatment isEqual:@NO] || [tagForUnderAgeOfConsent isEqual:@NO])
+    {
+        [[CartyADSDK sharedInstance] setCOPPAStatus:NO];
+    }
     [[CartyADSDK sharedInstance] start:appid completion:^{
         completionHandler(nil);
     }];
@@ -142,3 +154,9 @@
     [self.appOpen loadForAdConfiguration:adConfiguration completionHandler:completionHandler];
 }
 @end
+
+
+
+  
+
+  ;

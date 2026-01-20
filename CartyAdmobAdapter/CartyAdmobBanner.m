@@ -28,7 +28,7 @@
         if (originalCompletionHandler) {
           delegate = originalCompletionHandler(ad, error);
         }
-
+              
         originalCompletionHandler = nil;
 
         return delegate;
