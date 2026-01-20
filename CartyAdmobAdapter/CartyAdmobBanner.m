@@ -32,7 +32,7 @@
         originalCompletionHandler = nil;
 
         return delegate;
-      }
+      };
     
     
     
