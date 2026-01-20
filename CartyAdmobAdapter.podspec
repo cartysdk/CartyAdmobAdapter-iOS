@@ -18,5 +18,5 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
 
   spec.dependency 'CartySDK'
-  spec.dependency 'Google-Mobile-Ads-SDK', '~> 12.0'
+  spec.dependency 'Google-Mobile-Ads-SDK'
 end
