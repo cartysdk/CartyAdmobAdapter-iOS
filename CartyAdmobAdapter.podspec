@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "CartyAdmobAdapter"
-  spec.version      = "0.1.8"
+  spec.version      = "1.0.0"
   spec.summary      = "CartyAdmobAdapter"
   spec.description  = <<-DESC
              CartyAdmobAdapter for iOS. 
