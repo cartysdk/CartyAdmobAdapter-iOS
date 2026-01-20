@@ -25,7 +25,7 @@ let package = Package(
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
             ],
             path: "CartyAdmobAdapter",
-            publicHeadersPath: "CartyAdmobAdapter",
+            publicHeadersPath:"../CartyAdmobAdapter"
         ),
 
     ]
