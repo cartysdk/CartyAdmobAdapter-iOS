@@ -105,6 +105,7 @@
     {
         [[CartyADSDK sharedInstance] setCOPPAStatus:NO];
     }
+    [CartyADSDK sharedInstance].mediation = @"Admob";
     [[CartyADSDK sharedInstance] start:appid completion:^{
         completionHandler(nil);
     }];
