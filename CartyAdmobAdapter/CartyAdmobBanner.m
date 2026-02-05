@@ -68,6 +68,10 @@
     else
     {
         self.banner.isMute = GADMobileAds.sharedInstance.applicationMuted;
+        self.banner.bannerSize = [self getBannerSize:adConfiguration.adSize];
+        CGRect rect = CGRectZero;
+        rect.size = adConfiguration.adSize.size;
+        self.banner.frame = rect;
     }
     [self.banner loadAd];
 }
